@@ -1,0 +1,28 @@
+[package]
+name = "wellpet-core"
+version = "1.2.0"
+edition = "2021"
+
+[lib]
+name = "wellpet_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "wellpet"
+path = "src/main.rs"
+
+[[test]]
+name = "workday_sim"
+path = "tests/simulation/workday_sim.rs"
+
+[dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+rand = "0.8"
+regex = "1.10"
+uuid = { version = "1.8", features = ["v4", "serde"] }
+
+[dev-dependencies]
+approx = "0.5"
